@@ -15,10 +15,12 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "env-cmd -f .development.env react-scripts start",
+    "build": "env-cmd -f .development.env react-scripts build",
+    "start:test": "env-cmd -f .testing.env react-scripts start",
+    "build:test": "env-cmd -f .testing.env react-scripts build",
+    "start:prod": "env-cmd -f .production.env react-scripts start",
+    "build:prod": "env-cmd -f .production.env react-scripts build"
   },
   "eslintConfig": {
     "extends": [
@@ -37,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0"
   }
 }
